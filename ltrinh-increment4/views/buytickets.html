@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Tickets</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Tickets</a> 
+        </nav>
+
+        <main class="checkout-layout main">
+            <div class="steps-column">
+                <h1>TICKETS AND CHECKOUT</h1>
+                
+                <div class="step-container">
+                    <div class="step-sidebar">
+                        <div class="step-number">1.</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <button class="accordion-btn" onclick="toggleAccordion('step1-content')">TICKETS</button>
+                        <div id="step1-content" class="panel show">
+                            <table class="museum-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ticket Type</th>
+                                        <th>Description</th>
+                                        <th>Prices</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Adult</strong></td>
+                                        <td>General admission for ages 18 and over.</td>
+                                        <td><strong>$18</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student</strong></td>
+                                        <td>Student ID required at the door.</td>
+                                        <td><strong>$10</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Member</strong></td>
+                                        <td>Valid Member ID required.</td>
+                                        <td><strong>$15</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="cta-btn" onclick="openPayment('April 12')">Buy Now (April 12)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-sidebar">
+                        <div class="step-number">2.</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <button class="accordion-btn" onclick="toggleAccordion('step2-content')">PAYMENT</button>
+                        <div id="step2-content" class="panel">
+                            <form id="payment-form">
+                                <input type="text" id="selectedDate" readonly placeholder="Date Selected">
+                                <input type="text" placeholder="Full Name" required>
+                                <input type="email" placeholder="Email Address" required>
+                                <button type="button" class="cta-btn" onclick="submitPurchase()">Submit Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-sidebar"><div class="step-number">3.</div></div>
+                    <div class="step-content">
+                        <button class="accordion-btn" onclick="toggleAccordion('step3-content')">REVIEW AND CONFIRM</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="summary-aside">
+                <h2>SUMMARY</h2>
+                <hr>
+                <table class="summary-mini-table">
+                    <tr><td>Cart:</td><td style="text-align:right"></td></tr>
+                    <tr><td>Adult Tickets:</td><td style="text-align:right"></td></tr>
+                    <tr><td>Student Tickets:</td><td style="text-align:right"></td></tr>
+                    <tr><td>Member Tickets:</td><td style="text-align:right"></td></tr>
+                </table>
+            </aside>
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+
+
+
