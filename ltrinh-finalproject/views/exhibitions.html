@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Current Exhibitions</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="support.html">Support</a>
+            <a href="buytickets.html">Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="main">
+            <h1>CURRENT EXHIBITIONS</h1>
+            <p>Explore our latest collections and discover artworks that inspire and inform.</p>
+
+            <section class="exhibitions-grid">
+
+                <div class="exhibition-card">
+                    <img src="../static/impressionist.png" alt="An impressionist-style oil painting of the MonoMuse museum exterior on a sunny day, featuring vibrant brushstrokes, a cobblestone street with people in 19th-century attire, and lush green trees">
+                    <h2>Impressionist Masters</h2>
+                    <p>Step into the world of Monet, Renoir, and Degas with iconic impressionist artworks.</p>
+                    <p><strong>Dates:</strong> April 1 – July 31</p>
+                </div>
+
+                <div class="exhibition-card">
+                    <img src="../static/sculpture.png" alt="A wide shot of a museum gallery titled 'Sculpture: A Dynamic Perspective', featuring a mix of ancient Roman bust sculptures and large, abstract modern stone carvings under soft gallery lighting.">
+                    <h2>A Dynamic Perspective</h2>
+                    <p>Explore sculptures spanning ancient to contemporary times and see three-dimensional art evolve.</p>
+                    <p><strong>Dates:</strong> May 15 – August 30</p>
+                </div>
+
+                <div class="exhibition-card">
+                    <img src="../static/digitalart.png" alt="A modern museum hall with concrete walls and high ceilings, featuring large interactive digital screens displaying flowing colorful light patterns and visitors engaging with touchscreen art consoles.">
+                    <h2>Modern Digital Art</h2>
+                    <p>Experience cutting-edge digital artworks, interactive installations, and immersive projections.</p>
+                    <p><strong>Dates:</strong> June 10 – September 15</p>
+                </div>
+
+                <div class="exhibition-card">
+                    <img src="../static/code_canvas.png" alt="A futuristic interactive museum display where glowing lines of blue and purple computer code project from a console and transform into abstract, swirling digital art on a large wall, viewed by a visitor wearing headphones">
+                    <h2>Code & Canvas</h2>
+                    <p>See how artists transform lines of code into stunning visual experiences and interactive installations.</p>
+                    <p><strong>Dates:</strong> July 1 – October 31</p>
+                </div>
+
+                <div class="exhibition-card">
+                    <img src="../static/digital_dreams.png" alt="A futuristic interactive museum display where glowing lines of blue and purple computer code project from a console and transform into abstract, swirling digital art on a large wall, viewed by a visitor wearing headphones">
+                    <h2>Digital Dreams</h2>
+                    <p>Explore AI and generative tools creating evolving digital art. Witness the intersection of human creativity and algorithms.</p>
+                    <p><strong>Dates:</strong> August 1 – November 15</p>
+                </div>
+
+                <section class="exhibition-cta" style="text-align: center; margin-top: 50px; padding: 40px; background: #E5E9ED; border-radius: 8px;">
+                    <h2>Experience these in person</h2>
+                    <p>All exhibitions are included with general admission.</p>
+                    <a href="buytickets.html" class="cta">Get Your Tickets</a>
+                </section>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Support</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="support.html">Support</a> 
+            <a href="buytickets.html">Tickets</a> 
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="main">
+            <section class="support-hero" style="text-align: center; padding: 20px 0 40px 0;">
+                <h1>SUPPORT MONOMUSE</h1>
+                <p style="max-width: 700px; margin: 0 auto; color: #4A5A6A;">
+                    Help us preserve history. Join as a member or make a donation below.
+                </p>
+            </section>
+
+            <div class="exhibitions-grid">
+                <div class="exhibition-card">
+                    <h2>Annual Membership</h2>
+                    <p>Unlimited admission & 10% shop discount.</p>
+                    <p><strong>$60 / Year</strong></p>
+                    <button class="cta-btn" onclick="showSupportForm('Annual Membership', 60)">Sign Up</button>
+                </div>
+
+                <div class="exhibition-card">
+                    <h2>Student Membership</h2>
+                    <p>Special rate for students with valid ID.</p>
+                    <p><strong>$25 / Year</strong></p>
+                    <button class="cta-btn" onclick="showSupportForm('Student Membership', 25)">Sign Up</button>
+                </div>
+
+                <div class="exhibition-card">
+                    <h2>One-Time Donation</h2>
+                    <p>Support our educational programs.</p>
+                    <p><strong>Custom Amount</strong></p>
+                    <button class="cta-btn" onclick="showSupportForm('Donation', 0)">Donate Now</button>
+                </div>
+            </div>
+
+            <div id="support-form-container" class="panel" style="margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto; border: 1px solid #ddd; background-color: #E5E9ED; display: none;">
+                <h2 id="form-title" style="text-align: center; font-family: 'Montserrat', sans-serif; padding-top: 10px;">Complete Your Support</h2>
+                <hr>
+                <form id="active-support-form" style="padding: 20px;">
+                    <input type="hidden" id="supportType">
+
+                    <input type="text" id="supName" placeholder="Full Name" required style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;">
+                    <input type="email" id="supEmail" placeholder="Email Address" required style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;">
+                    <input type="tel" id="supPhone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;">
+
+                    <div id="donation-amount-area" style="display:none; margin-bottom: 15px;">
+                        <label><strong>Donation Amount ($)</strong></label>
+                        <input type="number" id="supAmount" placeholder="Enter Amount" min="1" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:5px;">
+                    </div>
+
+                    <hr style="margin: 20px 0;">
+                    <label><strong>Card Information</strong></label>
+                    <input type="text" placeholder="Card Number" required style="width:100%; padding:12px; margin-top:5px; border:1px solid #ccc; border-radius:5px;">
+                    <div style="display:flex; gap:10px; margin-top:10px;">
+                        <input type="text" placeholder="MM/YY" required style="width:50%; padding:12px; border:1px solid #ccc; border-radius:5px;">
+                        <input type="text" placeholder="CVV" required style="width:50%; padding:12px; border:1px solid #ccc; border-radius:5px;">
+                    </div>
+
+                    <div style="text-align:center; margin-top:30px; display:flex; gap:10px; justify-content: center;">
+                        <button type="button" class="cta-btn" onclick="submitSupport()">Process Payment</button>
+                        <button type="button" class="cta-btn" style="background:#666;" onclick="$('#support-form-container').fadeOut()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

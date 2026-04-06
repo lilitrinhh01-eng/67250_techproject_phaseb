@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Tickets</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="support.html">Support</a>
+            <a href="buytickets.html">Tickets</a> 
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="checkout-layout main">
+            <div class="steps-column">
+                <h1>TICKETS AND CHECKOUT</h1>
+                
+                <div class="step-container">
+                    <div class="step-sidebar">
+                        <div class="step-number">1.</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <button class="accordion-btn" onclick="toggleAccordion('step1-content')">1. SELECT TICKETS & DATE</button>
+                        <div id="step1-content" class="panel show">
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label for="visitDate"><strong>*Select Visit Date:*</strong></label><br>
+                                <input type="date" id="visitDate" class="ticket-qty-input" style="padding: 8px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                            </div>
+
+                            <table class="museum-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ticket Type</th>
+                                        <th>Prices</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Adult</strong><br><small>Ages 18+</small></td>
+                                        <td>$18</td>
+                                        <td><input type="number" class="ticket-qty" data-type="Adult" data-price="18" value="0" min="0" style="width: 60px; padding: 5px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Student</strong><br><small>ID Required</small></td>
+                                        <td>$10</td>
+                                        <td><input type="number" class="ticket-qty" data-type="Student" data-price="10" value="0" min="0" style="width: 60px; padding: 5px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Member</strong><br><small>Member ID Required</small></td>
+                                        <td>$15</td>
+                                        <td><input type="number" class="ticket-qty" data-type="Member" data-price="15" value="0" min="0" style="width: 60px; padding: 5px;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="margin-top: 20px;">
+                                <button type="button" class="cta-btn" onclick="openPayment()">Proceed to Payment</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <div class="step-sidebar">
+                        <div class="step-number">2.</div>
+                    </div>
+                    <div class="step-content">
+                        <button class="accordion-btn" onclick="toggleAccordion('step2-content')">2. PAYMENT</button>
+                        <div id="step2-content" class="panel">
+                            <form id="payment-form">
+                                <label>Visit Date Confirmation:</label>
+                                <input type="text" id="selectedDate" readonly style="background-color: #eee; margin-bottom: 15px; width: 100%; border: 1px solid #ccc; padding: 10px;">
+                                
+                                <input type="text" id="fullName" placeholder="Full Name" required style="display: block; width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;">
+                                <input type="email" id="email" placeholder="Email Address" required style="display: block; width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
+                                
+                                <label><strong>**Card Information:**</strong></label>
+                                <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16" style="display: block; width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #ccc;">
+                                
+                                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" style="flex: 1; padding: 10px; border: 1px solid #ccc;">
+                                    <input type="text" id="cvv" placeholder="CVV" maxlength="3" style="flex: 1; padding: 10px; border: 1px solid #ccc;">
+                                </div>
+
+                                <button type="button" class="cta-btn" onclick="submitPurchase()" style="width: 100%;">Submit Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="summary-aside">
+                <h2>SUMMARY</h2>
+                <hr>
+                <div id="cart-content">
+                    <ul id="orderSummary" style="list-style: none; padding: 0; line-height: 2;">
+                        <li>No tickets selected</li>
+                    </ul>
+                    <hr>
+                    <div style="font-size: 1.3rem; font-weight: bold; margin-top: 10px; display: flex; justify-content: space-between;">
+                        <span>TOTAL:</span>
+                        <span>$<span id="totalPrice">0</span></span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
