@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>MonoMuse | Contemporary Art & Tech</title>
+    
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <script src="./static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <a href="index.html">Home</a>
+            <a href="views/explore.html">Explore</a>
+            <a href="views/exhibitions.html">Exhibitions</a>
+            <a href="support.html">Support</a> 
+            <a href="views/buytickets.html">Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="main-content">
+            
+            <section class="hero-header">
+                <div class="hero-image-bg"></div> <div class="hero-overlay">
+                    <h1 id="greeting">Welcome</h1> 
+                    <p class="hero-subtext">Where digital innovation meets human creativity.</p>
+                    <a href="views/buytickets.html" class="cta-hero">Buy Tickets Now</a>
+                </div>
+            </section>
+
+            <section class="mission-statement">
+                <div class="mission-box">
+                    <p id="shortIntro">Discover how digital innovation is transforming the way we create and understand art through immersive installations and rotating collections.</p>
+                    <p id="longIntro" style="display: none;">Throughout the year, MonoMuse features workshops and special events led by world-class artists and technologists. Our museum invites visitors of all ages to learn, engage, and be inspired by the future of culture.</p>
+                    <div class="button-group">
+                        <button id="readMore" class="cta-secondary">Read More</button>
+                        <button id="readLess" class="cta-secondary" style="display: none;">Read Less</button>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="video-feature">
+                <div class="video-header">
+                    <h2>Virtual Museum Tour</h2>
+                    <p>Experience our current exhibits from anywhere in the world!</p>
+                </div>
+                
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/mOiEOs3ZlT8?si=ux1c-xXAyxQRMP50" 
+                        title="MonoMuse Virtual Tour" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="visit-section">
+                <div class="visit-card">
+                    <h2>Ready to Experience it in Person?</h2>
+                    <p>Join us at for unique hands-on journey.</p>
+                    <a href="views/buytickets.html" class="cta">Buy Tickets Now</a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+            <p>All visual content on this site is AI generated using Google Gemini</p>
+        </footer>
+    </div>
+</body> 
+</html>
+
+
+
+

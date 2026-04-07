@@ -1,0 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse - Explore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+</head>
+<body onload="addYear()">
+    <div class="container"> 
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo"> 
+        </header>
+
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Tickets</a> 
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="main">
+            <img src="../static/monomuse.png" alt="Monomuse Museum Image" style="width: 100%; max-width: 600px; border-radius: 8px; margin-bottom: 20px;">
+
+            <h3>Mission Statement</h3>
+            <p>MonoMuse is dedicated to exploring the evolving relationship between art, technology, and society. Our mission is to inspire curiosity and creativity by showcasing innovative exhibitions that highlight how digital tools, emerging technologies, and human imagination shape the future of artistic expression.</p>
+            <h3>Milestones</h3>
+                <ul class="milestone-list">
+                    <li><strong>2013:</strong> Expansion of the museum space and launch of international artist collaborations.</li>
+                    <li><strong>2016:</strong> MonoMuse opens its doors with its first exhibition on digital storytelling.</li>
+                    <li><strong>2018:</strong> Launch of the Interactive Media Lab, allowing visitors to experiment with creative coding.</li>
+                </ul>
+            
+            <h3>Visit Us</h3>
+            <div id="map"></div>
+
+        </main>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="MonoMuse Explore Page">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MonoMuse - Explore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+        </nav>
+
+        <main class="main">
+            <!-- Top Section: Image + Mission Statement -->
+            <section class="top-section">
+                <div class="image-container">
+                    <img src="../static/monomuse.png" alt="Monomuse Museum Image">
+                </div>
+                <div class="mission-container">
+                    <h3>Mission Statement</h3>
+                    <p>MonoMuse is dedicated to exploring the evolving relationship between art, technology, and society. Our mission is to inspire curiosity and creativity by showcasing innovative exhibitions that highlight how digital tools, emerging technologies, and human imagination shape the future of artistic expression.</p>
+                </div>
+            </section>
+
+            <!-- Milestones Section -->
+            <section class="milestones-section">
+                <h3>Milestones</h3>
+                <ul class="milestone-list">
+                    <li><strong>2013:</strong> Expansion of the museum space and launch of international artist collaborations.</li>
+                    <li><strong>2016:</strong> MonoMuse opens its doors with its first exhibition on digital storytelling.</li>
+                    <li><strong>2018:</strong> Launch of the Interactive Media Lab, allowing visitors to experiment with creative coding.</li>
+                </ul>
+            </section>
+
+            <!-- Bottom Section: Map + Visitor Planning -->
+            <section class="bottom-section">
+                <div id="map" class="map-container"></div>
+                <div class="visitor-planning">
+                    <h3>Visitor Planning</h3>
+                    <p><strong>Hours:</strong> Mon-Fri: 10am - 6pm | Sat-Sun: 11am - 7pm</p>
+                    <p><strong>Tickets:</strong> Adults: $15 | Students: $10 | Children: $5</p>
+                    <p>As a visitor, you can quickly find hours of operation and ticket pricing to plan your visit.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>
